@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .forma{
+            padding: 50px;
+            min-width: 300px;
+        }
+        form{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px 0 rgba(17, 171, 254, 0.404);
+
+            border-color: rgb(70, 66, 66);
+        }
+    </style>
+</head>
+<body>
+    <div class="forma">
+        <form action="get" name="forma">
+            <p>Введите примерное расстояние в километрах</p>
+            <input type="text" placeholder="расстояние" id="s">
+            <input type="submit" value="Отправить">
+        </form>
+        <div style="margin-top: 30px;">
+            <p id="div-calculate"></p>
+        </div>
+        <a href="./exam.html"><button>Назад</button></a>
+    </div>
+    <script>
+        let form = document.forms.forma
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            let s = document.querySelector('#s').value
+            let answer = s * 45
+            document.getElementById('div-calculate').innerText = `${s *45}руб`
+        })
+    </script>
+</body>
+</html>
